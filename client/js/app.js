@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Session__r.Id, Session__r.Name FROM Session_Speaker__c";
+  var soql = "SELECT ID, Session__r.Name FROM Session_Speaker__c";
   force.query(soql, success, error);
 }
 
@@ -9,7 +9,7 @@ function getSessionDetails(sessionId, success, error) {
   "Speaker__r.First_Name__c, " +
   "Speaker__r.Last_Name__c " +
   "FROM Session_Speaker__c " +
-  "WHERE Session__r.Id = '" + sessionId + "'";
+  "WHERE ID = '" + sessionId + "'";
   force.query(soql, success, error);
 }
 
